@@ -1,6 +1,6 @@
 class BaseAdvertising:
     def __init__(self) -> None:
-        self._id: int
+        self._id: int = 0
         self._clicks: int = 0
         self._views: int = 0
 

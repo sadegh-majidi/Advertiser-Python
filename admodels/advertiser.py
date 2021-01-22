@@ -6,6 +6,8 @@ class Advertiser(BaseAdvertising):
 
     def __init__(self, _id: int, name: str) -> None:
         super(Advertiser, self).__init__()
+        assert not any(advertiser._id == _id for advertiser in Advertiser.__all_advertisers), \
+            f'Id {_id} is duplicated. Advertiser\'s id Should be unique.'
         self._id = _id
         self.__name = name
         Advertiser.__all_advertisers.append(self)

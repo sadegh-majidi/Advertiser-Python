@@ -7,6 +7,8 @@ class Ad(BaseAdvertising):
 
     def __init__(self, _id: int, title: str, img_url: str, link: str, advertiser: Advertiser) -> None:
         super(Ad, self).__init__()
+        assert not any(i == _id for i in Ad.__ids), f'Id {_id} is duplicated. Id of the Ad Should be unique.'
+        assert advertiser is not None, 'Must provide an advertiser to ad.'
         self._id = _id
         self.__title = title
         self.__img_URL = img_url
