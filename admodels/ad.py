@@ -7,7 +7,7 @@ class Ad(BaseAdvertising):
 
     def __init__(self, _id: int, title: str, img_url: str, link: str, advertiser: Advertiser) -> None:
         super(Ad, self).__init__()
-        super._id = _id
+        self._id = _id
         self.__title = title
         self.__img_URL = img_url
         self.__link = link

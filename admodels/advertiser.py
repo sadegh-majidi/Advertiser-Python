@@ -6,13 +6,13 @@ class Advertiser(BaseAdvertising):
 
     def __init__(self, _id: int, name: str) -> None:
         super(Advertiser, self).__init__()
-        super._id = _id
+        self._id = _id
         self.__name = name
         Advertiser.__all_advertisers.append(self)
 
     @staticmethod
     def get_total_clicks() -> int:
-        return sum((advertiser.get_clicks() for advertiser in Advertiser.__all_advertisers), start=0)
+        return sum(advertiser.get_clicks() for advertiser in Advertiser.__all_advertisers)
 
     @staticmethod
     def help() -> None:
