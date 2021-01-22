@@ -9,7 +9,7 @@ class Advertiser(BaseAdvertising):
         assert not any(advertiser._id == _id for advertiser in Advertiser.__all_advertisers), \
             f'Id {_id} is duplicated. Advertiser\'s id Should be unique.'
         self._id = _id
-        self.__name = name
+        self.__name: str = name
         Advertiser.__all_advertisers.append(self)
 
     @staticmethod

@@ -10,10 +10,10 @@ class Ad(BaseAdvertising):
         assert not any(i == _id for i in Ad.__ids), f'Id {_id} is duplicated. Id of the Ad Should be unique.'
         assert advertiser is not None, 'Must provide an advertiser to ad.'
         self._id = _id
-        self.__title = title
-        self.__img_URL = img_url
-        self.__link = link
-        self.__advertiser = advertiser
+        self.__title: str = title
+        self.__img_URL: str = img_url
+        self.__link: str = link
+        self.__advertiser: Advertiser = advertiser
         Ad.__ids.append(_id)
 
     def get_title(self) -> str:
@@ -38,11 +38,11 @@ class Ad(BaseAdvertising):
         self.__advertiser = advertiser
 
     def inc_clicks(self) -> None:
-        super().inc_clicks()
+        super(Ad, self).inc_clicks()
         self.__advertiser.inc_clicks()
 
     def inc_views(self) -> None:
-        super().inc_views()
+        super(Ad, self).inc_views()
         self.__advertiser.inc_views()
 
     def describe_me(self) -> None:
