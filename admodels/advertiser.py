@@ -22,3 +22,17 @@ class Advertiser(BaseAdvertising):
               'views: number of total views of this advertiser\'s ads\n'
               'clicks: number of total clicks of this advertiser\'s ads'
               )
+
+    def get_name(self) -> str:
+        return self.__name
+
+    def set_name(self, name: str) -> None:
+        self.__name = name
+
+    def describe_me(self) -> None:
+        print('Name: Advertiser\n'
+              'Description: This class is a blueprint to create advertiser objects and derived from BaseAdvertising '
+              'Base class.'
+              )
+
+
