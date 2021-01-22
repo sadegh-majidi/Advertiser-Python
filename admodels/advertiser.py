@@ -34,5 +34,3 @@ class Advertiser(BaseAdvertising):
               'Description: This class is a blueprint to create advertiser objects and derived from BaseAdvertising '
               'Base class.'
               )
-
-
